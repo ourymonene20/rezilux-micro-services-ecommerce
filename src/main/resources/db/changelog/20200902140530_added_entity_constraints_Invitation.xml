@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet id="20200902140530-2" author="rezilux">
+
+        <addForeignKeyConstraint baseColumnNames="sender_id"
+                                 baseTableName="invitation"
+                                 constraintName="invitation_sender_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="yupay_user" />
+
+        <addForeignKeyConstraint baseColumnNames="receiver_id"
+                                 baseTableName="invitation"
+                                 constraintName="invitation_receiver_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="yupay_user" />
+
+        <addForeignKeyConstraint baseColumnNames="group_id"
+                                 baseTableName="invitation"
+                                 constraintName="invitation_group_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="yupay_group" />
+
+    </changeSet>
+
+</databaseChangeLog>

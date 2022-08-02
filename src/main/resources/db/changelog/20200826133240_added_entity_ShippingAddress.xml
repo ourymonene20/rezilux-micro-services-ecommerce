@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet id="20200331135040-1" author="rezilux">
+        <createTable tableName="shipping_address">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="address_line" type="varchar(50)"></column>
+            <column name="user_id" type="bigint"/>
+            <column name="full_name" type="varchar(255)"/>
+            <column name="phone" type="varchar(255)"/>
+            <column name="city" type="varchar(100)"/>
+            <column name="is_default" type="boolean"/>
+        </createTable>
+
+
+    </changeSet>
+
+</databaseChangeLog>

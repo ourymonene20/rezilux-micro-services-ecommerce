@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+
+    <changeSet id="20200331135046-2" author="rezilux">
+
+        <addForeignKeyConstraint baseColumnNames="personne_id"
+                                 baseTableName="pointage"
+                                 constraintName="fk_person_pointing_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="type_lieu"/>
+
+
+        <addForeignKeyConstraint baseColumnNames="position_id"
+                                 baseTableName="pointage"
+                                 constraintName="fk_place_pointing_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="position"/>
+
+
+
+    </changeSet>
+</databaseChangeLog>

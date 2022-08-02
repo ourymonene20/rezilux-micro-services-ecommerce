@@ -1,0 +1,13 @@
+package com.rezilux.dinngdonngecommerceapi;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class DinngDonngEcommerceApiApplicationTests {
+
+	@Test
+	void contextLoads() {
+	}
+
+}

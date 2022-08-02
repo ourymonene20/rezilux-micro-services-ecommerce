@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+
+    <changeSet id="20200331135044-2" author="rezilux">
+
+        <addForeignKeyConstraint baseColumnNames="type_moyen_transport_id"
+                                 baseTableName="moyen_transport"
+                                 constraintName="fk_transport_type_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="type_moyen_transport"/>
+
+
+        <addForeignKeyConstraint baseColumnNames="id"
+                                 baseTableName="moyen_transport"
+                                 constraintName="fk_transport_position_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="position"/>
+
+
+    </changeSet>
+</databaseChangeLog>

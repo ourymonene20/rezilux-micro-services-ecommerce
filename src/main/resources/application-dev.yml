@@ -1,0 +1,79 @@
+spring:
+  profiles: dev
+
+  mvc:
+    static-path-pattern: /assets/**
+
+  liquibase:
+    change-log: classpath:/db/master.xml
+    # java mail
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: help.123@rezilux.com
+    password: passer@123
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+
+  freemarker:
+    charset: UTF-8
+  ## Mysql
+  datasource:
+    url: jdbc:mysql://localhost:3306/dinngdonng?autoReconnect=true&useSSL=false&allowPublicKeyRetrieval=true&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDateTimeCode=false&serverTimezone=UTC
+    username: root
+    password: #Sigon21@ #passer
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    show-sql: true
+    # The SQL dialect makes Hibernate generate better SQL for the chosen database
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        #drop and create table again, good for testing, comment this in production
+        ddl-auto: update
+
+# Server Port
+server:
+  port: 8443
+  ssl:
+    key-store-type: JKS
+    key-store: classpath:dinngdonng-keystore.jks
+    key-store-password: dinngdonng@rezilux2020*/*/
+  http:
+    port: 8090
+
+# Assets directory
+app:
+  assets:
+    path: D:\\assets
+    api-url: https://local.dinngdonng.com:8443/assets
+  jwt:
+    secret-base64: dm6mcX1iZQz7ncL/KJ2XDinEHzjzN5/KJRjNZZG4R1JmGudAgZ8SPPc8gxKrUicSg+kvpu5tIHqyO8urUMXMY/b8PG7MaOOoFbQKl2iUTXNv99yYYtB3ijUpd3bSd4yBGGRTI3ayh9zRRz3IXeuxP2LDBItffd1r53AJK64j3yWzAxa4iT2xp2RVDy0q+lX6F7pkSnyDYThC5Bo6OJyuUOkTMYeErc+22osUWXCrXeh3aFQR1k+KwUXNGsBZTNYdF81MU21RwwqIhFfd/ir4Y4kLt73VUAXiLty9YDAyWPM/hHDABJAVkAihRDbr6GrGyu3F6kgDZL8XZkXZ/9gTAA==
+    # Token is valid 10 days = 240 hours = 14400 minutes
+    token-validity-in-seconds: 86400
+    token-validity-in-seconds-for-remember-me: 2592000
+
+  front-url: http://localhost:4500
+
+  madjindo-api-url: http://localhost:8081
+  madjindo-api-key: $2a$10$Mn7NO432Ve2s0OOnwf9VPey3FrH6Of.aN89WZyeFRIhjkFpql5nmW
+  madjindo-auth-token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJoZWxwLjEyM0ByZXppbHV4LmNvbSIsImF1dGgiOiJBZG1pbmlzdHJhdGV1ciJ9.sIEuh1OybtceXwF89LAMxZShnrvoIABSRKrN36ZGlpo
+
+  socket-server: https://test-sc.dinngdonng.com:8086
+
+
+#configuration twilio
+twilio:
+  account_sid: ACa79f98737b819530e88af2dffc605f42
+  auth_token: 52b2d1d210e727477ec8b32aa1dbf2d3
+  trial_number: +12058131246
+
+
+firebase:
+  auth-token: fMwWG_GcCFY:APA91bFgkQSu-o6DiQxP-rjHwBtMCZl7UQRaJIhvUT7BODpIaBIMt1uI9moNpv3GJiRsOyRCO0u6RnSUrxPm5ucaUlscQkYwba-OaULkfSCskSoCpIo_iVvKS4eQKdmnSYNCeX5jOl9k
+  authorisation: key=AAAAAB6NNeU:APA91bGeiUA8ECpJYH5ilZWYmpCWHVQ_IrYBVMYWaEQ7v9K7lADcOb6uyLLBy7eWtzrmSRgGfzh2r30CUNyZwv4yAW2swcK1haT_rgLACxob2vHp5j8PMtrS4vZ0T3bWQ38NoFN_vNgD
